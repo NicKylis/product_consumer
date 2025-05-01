@@ -5,7 +5,7 @@
 #include <math.h>
 
 #define QUEUESIZE 10
-#define LOOP 100000 // Large number of iterations
+#define LOOP 10000 // Large number of iterations
 
 typedef struct {
     void * (*work)(void *);
@@ -41,8 +41,8 @@ int next_task_id = 1;
 
 int main() {
     queue *fifo;
-    int p = 1; // Number of producers
-    int q = 1000; // Number of consumers
+    int p = 8; // Number of producers
+    int q = 16; // Number of consumers
     pthread_t producers[p];
     pthread_t consumers[q];
 
